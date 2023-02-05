@@ -448,7 +448,6 @@ class TestAdminRegisteredModelsChildrenOfStripeModel(TestCase):
                     self.assertTrue("id" in search_fields)
 
     def test_get_actions(self):
-
         app_label = "djstripe"
         app_config = apps.get_app_config(app_label)
         all_models_lst = app_config.get_models()
@@ -1010,7 +1009,6 @@ class TestCustomActionMixin:
 
                 # sub-classes of StripeModel
                 if model.__name__ not in self.ignore_models:
-
                     if getattr(model.stripe_class, "retrieve", None):
                         # assert "_resync_instances" action is present
                         assert "_resync_instances" in actions
@@ -1020,7 +1018,6 @@ class TestCustomActionMixin:
 
     @pytest.mark.parametrize("fake_selected_pks", [None, [1, 2]])
     def test_changelist_view(self, admin_client, fake_selected_pks):
-
         app_label = "djstripe"
         app_config = apps.get_app_config(app_label)
         all_models_lst = app_config.get_models()
@@ -1030,7 +1027,6 @@ class TestCustomActionMixin:
                 model.__name__ == "WebhookEndpoint"
                 or model.__name__ not in self.ignore_models
             ):
-
                 # get the standard changelist_view url
                 change_url = reverse(
                     f"admin:{model._meta.app_label}_{model.__name__.lower()}_changelist"
@@ -1108,7 +1104,6 @@ class TestCustomActionMixin:
                     or model.__name__ not in self.ignore_models
                 )
             ):
-
                 # get the standard changelist_view url
                 change_url = reverse(
                     f"admin:{model._meta.app_label}_{model.__name__.lower()}_changelist"

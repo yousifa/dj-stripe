@@ -454,7 +454,6 @@ class StripeModel(StripeBaseModel):
         if issubclass(
             field.related_model, (StripeModel, DjstripePaymentMethod, InvoiceOrLineItem)
         ):
-
             if field_name in manipulated_data:
                 raw_field_data = manipulated_data.get(field_name)
 
