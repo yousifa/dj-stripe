@@ -6,20 +6,30 @@ import djstripe.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('djstripe', '0019_add_customer_discount'),
+        ("djstripe", "0019_add_customer_discount"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='invoiceitem',
-            name='unit_amount_decimal',
-            field=djstripe.fields.StripeDecimalCurrencyAmountField(blank=True, decimal_places=12, max_digits=24, null=True),
+            model_name="invoiceitem",
+            name="unit_amount_decimal",
+            field=djstripe.fields.StripeDecimalCurrencyAmountField(
+                blank=True, decimal_places=12, max_digits=24, null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='plan',
-            name='amount_decimal',
-            field=djstripe.fields.StripeDecimalCurrencyAmountField(blank=True, decimal_places=12, max_digits=24, null=True),
+            model_name="plan",
+            name="amount_decimal",
+            field=djstripe.fields.StripeDecimalCurrencyAmountField(
+                blank=True, decimal_places=12, max_digits=24, null=True
+            ),
+        ),
+        migrations.AlterField(
+            model_name="price",
+            name="unit_amount_decimal",
+            field=djstripe.fields.StripeDecimalCurrencyAmountField(
+                blank=True, decimal_places=12, max_digits=24, null=True
+            ),
         ),
     ]
