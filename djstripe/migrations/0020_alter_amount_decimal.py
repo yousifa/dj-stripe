@@ -17,4 +17,9 @@ class Migration(migrations.Migration):
             name='unit_amount_decimal',
             field=djstripe.fields.StripeDecimalCurrencyAmountField(blank=True, decimal_places=12, max_digits=24, null=True),
         ),
+        migrations.AlterField(
+            model_name='plan',
+            name='amount_decimal',
+            field=djstripe.fields.StripeDecimalCurrencyAmountField(blank=True, decimal_places=12, max_digits=24, null=True),
+        ),
     ]
