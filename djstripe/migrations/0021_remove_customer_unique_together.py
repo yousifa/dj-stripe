@@ -5,7 +5,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("djstripe", "0020_alter_session"),
+        ("djstripe", "0011_2_7"),
     ]
 
     operations = [
